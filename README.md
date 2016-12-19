@@ -11,17 +11,18 @@ B. INSTALLATION AND SET UP
 -------------------------------------------------------------------------------------------------------------------------------------------
 
 1.Into R session, install R/BioConductor dependencies  
-# download the BioC installation routines 
+
+ #download the BioC installation routines 
   source("http://bioconductor.org/biocLite.R")
-# install the core packages. It will take some time!!
+ #install the core packages. It will take some time!!
   biocLite(c())
-# install the Bioconductor packages
+ #install the Bioconductor packages
  biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))
-# install the CRAN packages
+ #install the CRAN packages
  install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "reshape2", "ggplot2" ))
-# install the Github packages
+ #install the Github packages
  library(devtools)
-install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
+ install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 
 2.Download 
 
