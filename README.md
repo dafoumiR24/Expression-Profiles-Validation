@@ -16,22 +16,22 @@ R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 ```{r}
 #download the BioC installation routines
 source("http://bioconductor.org/biocLite.R")
+#install the core packages. It will take some time!!
+biocLite(c())
+#install the Bioconductor packages
+biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))
+#install the CRAN packages
+install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "reshape2", "ggplot2" ))
+#install the Github packages
+library(devtools)
+install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 ```
-install the core packages. It will take some time!!<br/>
-biocLite(c())<br/>
-install the Bioconductor packages<br/>
-biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))<br/>
-install the CRAN packages<br/>
-install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "reshape2", "ggplot2" ))<br/>
-install the Github packages<br/>
-library(devtools)<br/>
-install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))<br/>
-
 2. Download files from 'scripts' directory to a preference directory. To set this directory as your working directory of R, type:<br/>
-   
-WD <- "C:/Users/aaaa/bbbb/cccc/dddd"<br/>
-setwd(WD)<br/>
 
+```{r}
+WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
+setwd(WD)
+```
 3. a. For GPL570 platform -Affymetrix Human Genome U133 Plus 2.0 microarray transcriptomic data- analyses you need to acquire the raw data directly from GEO. Specifically for each GSE accession number (GSEXXXX) you need to download the .CEL files and put them into a new directory named "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data". Also you need to capture the experimental information. This is just a text file which includes a data frame containing three columns. The first column (without colname) describes the chip names, and the last ones correspond the source of the biological samples hybridised to them and the GSE accession number of each chip respectively (with column names). You need to put this file into the "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data" directory.<br/>
 
    b. For RNA and miRNA sequencing data analyses put the text files containing raw read count and biological phenotype data frames from TCGA or other sources into the working directory ("C:/Users/aaaa/bbbb/cccc/dddd"). The row names and the column names of raw read count data frames correspond to mRNAs/mature miRNA strands and Samples respectively. The row names and column names of biological phenotype data contain the samples and the biological characteristics of samples respectively.<br/>
@@ -39,11 +39,11 @@ setwd(WD)<br/>
 
 
 
-#C. USAGE<br/>
+#C. USAGE
 
-  
-1. qc_microarray_data (GSE_acc, dir_download_GSES )<br/>
- 
+ ```{r} 
+qc_microarray_data (GSE_acc, dir_download_GSES )<br/>
+ ```
 __Description__: This function performs some quality control checks in order to make sure that there are no issues with a specific GSE dataset.<br/> 
 
 __Input arguments__
