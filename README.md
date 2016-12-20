@@ -1,3 +1,5 @@
+There were `r nrow(cars)` cars studied
+
 R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 
 #A. REQUIREMENTS
