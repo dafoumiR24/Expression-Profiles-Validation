@@ -11,7 +11,7 @@ R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 
 #B. INSTALLATION AND SET UP<br/>
 
-1. Start R and install R/BioConductor dependencies<br/>  
+* 1. Start R and install R/BioConductor dependencies<br/>  
 
 ```{r}
 #download the BioC installation routines
@@ -26,7 +26,7 @@ install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "re
 library(devtools)
 install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 ```
-2. Download files from 'scripts' directory to a preference directory. To set this directory as your working directory of R, type:<br/>
+* 2. Download files from 'scripts' directory to a preference directory. To set this directory as your working directory of R, type:<br/>
 
 ```{r}
 WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
