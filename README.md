@@ -5,9 +5,9 @@ R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 #A. REQUIREMENTS
 
 
-1. Windows 10
-2. R version 3.2.1 (2015-06-18)
-3. R packages: affy, simpleaffy, frma, RColorBrewer, affyPLM, inSilicoMerging, amap, genefilter, limma, hgu133plus2.db, annotate, gplots, devtools, easyGgplot2, edgeR, corrplot, reshape2, ggplot2, ggbiplot
+* 1. Windows 10
+* 2. R version 3.2.1 (2015-06-18)
+* 3. R packages: affy, simpleaffy, frma, RColorBrewer, affyPLM, inSilicoMerging, amap, genefilter, limma, hgu133plus2.db, annotate, gplots, devtools, easyGgplot2, edgeR, corrplot, reshape2, ggplot2, ggbiplot
 
 #B. INSTALLATION AND SET UP<br/>
 
@@ -32,9 +32,9 @@ install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
 setwd(WD)
 ```
-3. a. For GPL570 platform -Affymetrix Human Genome U133 Plus 2.0 microarray transcriptomic data- analyses you need to acquire the raw data directly from GEO. Specifically for each GSE accession number (GSEXXXX) you need to download the .CEL files and put them into a new directory named "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data". Also you need to capture the experimental information. This is just a text file which includes a data frame containing three columns. The first column (without colname) describes the chip names, and the last ones correspond the source of the biological samples hybridised to them and the GSE accession number of each chip respectively (with column names). You need to put this file into the "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data" directory.<br/>
+* 3.a For GPL570 platform -Affymetrix Human Genome U133 Plus 2.0 microarray transcriptomic data- analyses you need to acquire the raw data directly from GEO. Specifically for each GSE accession number (GSEXXXX) you need to download the .CEL files and put them into a new directory named "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data". Also you need to capture the experimental information. This is just a text file which includes a data frame containing three columns. The first column (without colname) describes the chip names, and the last ones correspond the source of the biological samples hybridised to them and the GSE accession number of each chip respectively (with column names). You need to put this file into the "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data" directory.<br/>
 
-   b. For RNA and miRNA sequencing data analyses put the text files containing raw read count and biological phenotype data frames from TCGA or other sources into the working directory ("C:/Users/aaaa/bbbb/cccc/dddd"). The row names and the column names of raw read count data frames correspond to mRNAs/mature miRNA strands and Samples respectively. The row names and column names of biological phenotype data contain the samples and the biological characteristics of samples respectively.<br/>
+    b. For RNA and miRNA sequencing data analyses put the text files containing raw read count and biological phenotype data frames from TCGA or other sources into the working directory ("C:/Users/aaaa/bbbb/cccc/dddd"). The row names and the column names of raw read count data frames correspond to mRNAs/mature miRNA strands and Samples respectively. The row names and column names of biological phenotype data contain the samples and the biological characteristics of samples respectively.<br/>
 
 
 
