@@ -79,7 +79,7 @@ This function generates a new directory "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/Qu
 <br/>
 <br/>
 ```{r}
-GSEs_merge_gene_filter (GSE_acc_4_merge, targetAnnot, batchAnnot,  transform_method= "COMBAT", dir_download_GSES )
+GSEs_merge_gene_filter (GSE_acc_4_merge, targetAnnot, batchAnnot,  transform_method, dir_download_GSES )
 ```
 
 __Description__:This function merges multiple GSE datasets through batch effect removal, filter out uninformative data such as control probesets and other internal controls as well as removing genes with low variance.<br/>
@@ -150,7 +150,7 @@ Cluster_heatmap function generates a .png file containing the clustering heatmap
 <br/>
 <br/>
 ```{r}  
-Boxplots (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,addDot=TRUE, x_label, y_label, outputFileFolder)
+Boxplots (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,addDot, x_label, y_label, outputFileFolder)
   ```
 __Description__:This function produces boxplot(s) of the given grouped values.<br/>
 
@@ -261,7 +261,7 @@ For each feature of interest cor_heatmap function generates two .png files inclu
 <br/>
 <br/>
 ```{r}  
-miRNA_mRNA_inters (NORM_EXPR_VALUES_MRNA,NORM_EXPR_VALUES_MIRNA,gene_list, miRNA_list,method= "pearson",adjust_pvalue_method= NULL, miRNA_annot, cor_pvalue_cutoff,outputFileFolder)
+miRNA_mRNA_inters (NORM_EXPR_VALUES_MRNA,NORM_EXPR_VALUES_MIRNA,gene_list, miRNA_list,method,adjust_pvalue_method, miRNA_annot, cor_pvalue_cutoff,outputFileFolder)
 ```
 
 __Description__:This function performs miRNA-mRNA interaction network analysis combining expression profiles with target site information (targetScan and microCosm databases).<br/>
