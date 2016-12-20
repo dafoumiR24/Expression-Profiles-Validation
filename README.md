@@ -13,9 +13,9 @@ R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 
 1. Start R and install R/BioConductor dependencies<br/>  
 
-download the BioC installation routines <br/>
 ```{r}
-source("http://bioconductor.org/biocLite.R")<br/>
+#download the BioC installation routines
+source("http://bioconductor.org/biocLite.R")
 ```
 install the core packages. It will take some time!!<br/>
 biocLite(c())<br/>
