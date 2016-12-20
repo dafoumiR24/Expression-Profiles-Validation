@@ -1,19 +1,20 @@
-
-##################################### R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis ##############################
+R Scripts for RNA-seq/miRNA-seq/RNA microarray data analysis
 
 #A. REQUIREMENTS
-.......................................................................................................................................
+
 
 1. Windows 10
 2. R version 3.2.1 (2015-06-18)
 3. R packages: affy, simpleaffy, frma, RColorBrewer, affyPLM, inSilicoMerging, amap, genefilter, limma, hgu133plus2.db, annotate, gplots, devtools, easyGgplot2, edgeR, corrplot, reshape2, ggplot2, ggbiplot
 
 #B. INSTALLATION AND SET UP<br/>
-....................................................................................................................................... 
+
 1. Start R and install R/BioConductor dependencies<br/>  
 
 download the BioC installation routines <br/>
+```{r}
 source("http://bioconductor.org/biocLite.R")<br/>
+```
 install the core packages. It will take some time!!<br/>
 biocLite(c())<br/>
 install the Bioconductor packages<br/>
@@ -37,7 +38,7 @@ setwd(WD)<br/>
 
 
 #C. USAGE<br/>
-.......................................................................................................................................
+
   
 1. qc_microarray_data (GSE_acc, dir_download_GSES )<br/>
  
