@@ -12,13 +12,13 @@
 ....................................................................................................................................... 
 1. Start R and install R/BioConductor dependencies  
 
-download the BioC installation routines 
-source("http://bioconductor.org/biocLite.R")
-install the core packages. It will take some time!!
-biocLite(c())
-install the Bioconductor packages
-biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))
-install the CRAN packages
+download the BioC installation routines <br/>
+source("http://bioconductor.org/biocLite.R")<br/>
+install the core packages. It will take some time!!<br/>
+biocLite(c())<br/>
+install the Bioconductor packages<br/>
+biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))<br/>
+install the CRAN packages<br/>
 install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "reshape2", "ggplot2" ))
 install the Github packages
 library(devtools)
