@@ -31,6 +31,10 @@ install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 ```{r}
 WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
 setwd(WD)
+functions_list <- list.files(pattern = "script")
+for(i in 1:length(functions_list)){
+    source(functions_list[i])
+  }
 ```
 * 3.a For GPL570 platform -Affymetrix Human Genome U133 Plus 2.0 microarray transcriptomic data- analyses you need to acquire the raw data directly from GEO. Specifically for each GSE accession number (GSEXXXX) you need to download the .CEL files and put them into a new directory named "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data". Also you need to capture the experimental information. This is just a text file which includes a data frame containing three columns. The first column (without colname) describes the chip names, and the last ones correspond the source of the biological samples hybridised to them and the GSE accession number of each chip respectively (with column names). You need to put this file into the "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data" directory.<br/>
 
