@@ -13,11 +13,11 @@
 1. Start R and install R/BioConductor dependencies  
 
 download the BioC installation routines 
-               source("http://bioconductor.org/biocLite.R")
+source("http://bioconductor.org/biocLite.R")
 install the core packages. It will take some time!!
-     biocLite(c())
+biocLite(c())
 install the Bioconductor packages
-     biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))
+biocLite(c("affy", "simpleaffy", "frma", "affyPLM", "inSilicoMerging", "genefilter", "limma", "hgu133plus2.db", "annotate", "edgeR"))
 install the CRAN packages
 install.packages(c("RColorBrewer", "amap", "gplots", "devtools", "corrplot", "reshape2", "ggplot2" ))
 install the Github packages
@@ -37,15 +37,15 @@ from GEO. Specifically for each GSE accession number (GSEXXXX) you need to downl
 
 
 
-#C. USAGE
-........................................................................................................................................  
-      1.                    qc_microarray_data (GSE_acc, dir_download_GSES )
+#C. USAGE..............................................................................................................................
+  
+1. qc_microarray_data (GSE_acc, dir_download_GSES )
  
 __Description__: This function performs some quality control checks in order to make sure that there are no issues with a specific GSE dataset. 
 
 __Input arguments__
-GSE_acc: a character string indicating GSE number
-dir_download_GSES: a character string indicating the pathway of directory of downloaded GSE dataset(s).
+_GSE_acc_: a character string indicating GSE number
+_dir_download_GSES_: a character string indicating the pathway of directory of downloaded GSE dataset(s).
 
 __Output data files__
 
@@ -59,9 +59,9 @@ __Description__:This function removes the low quality samples.
    
 __Input arguments__ 
     
-GSE_acc: a character string indicating GSE number
-cels_REMOVE_AFTER_QC: a character vector of names of .CEL files going to be removed
-dir_download_GSES: a character string indicating the pathway of directory of downloaded GSE dataset(s).
+_GSE_acc_: a character string indicating GSE number
+_cels_REMOVE_AFTER_QC_: a character vector of names of .CEL files going to be removed
+_dir_download_GSES_: a character string indicating the pathway of directory of downloaded GSE dataset(s).
 
 __Output data files__
 
@@ -76,11 +76,11 @@ __Description__:This function merges multiple GSE datasets through batch effect 
     
     
 __Input arguments__
-GSE_acc_4_merge: a character vector of GSE accession numbers of different datasets to be merged.
-targetAnnot: a character string of phenotype dataset column name corresponding the biological variable
-batchAnnot: a character string of phenotype dataset column name corresponding the GSE accession number of each chip.
-transform_method : Merging method aimed at removing batch effects. Possible options are: BMC, COMBAT, DWD, GENENORM, GENESHIFT, NONE and XPN
-dir_download_GSES: a character string indicating the pathway of directory of downloaded GSE datasets
+_GSE_acc_4_merge_: a character vector of GSE accession numbers of different datasets to be merged.
+_targetAnnot_: a character string of phenotype dataset column name corresponding the biological variable
+_batchAnnot_: a character string of phenotype dataset column name corresponding the GSE accession number of each chip.
+_transform_method_: Merging method aimed at removing batch effects. Possible options are: BMC, COMBAT, DWD, GENENORM, GENESHIFT, NONE and XPN
+_dir_download_GSES_: a character string indicating the pathway of directory of downloaded GSE datasets
 
     
 __Output data files__
@@ -96,15 +96,15 @@ __Description__:This function performs differential expression analysis for micr
 
 __Input arguments__
      
-Exprs_table: Expression data frame containing log-ratios or log-expression values for a series of arrays, with rows corresponding to genes and columns to samples.
-Pheno_data_table: Phenotype dataframe containing biological information of samples with rows corresponding to samples and columns to biological variables
-sample_type_colname: a character string of phenotype dataset column name corresponding to a biological variable
-diff_exp_type : a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
-adjust_pvalue_method: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
-LogFC_cuttoff: log2 fold change threshold value
-Adj_p_value_cuttoff: adjusted p-value threshold
-annotation_microarray_probesets: logical value. If TRUE it will be performed annotation of the results with associated gene symbols
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: Expression data frame containing log-ratios or log-expression values for a series of arrays, with rows corresponding to genes and columns to samples.
+_Pheno_data_table_: Phenotype dataframe containing biological information of samples with rows corresponding to samples and columns to biological varables
+_sample_type_colname_: a character string of phenotype dataset column name corresponding to a biological variable
+_diff_exp_type_: a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
+_adjust_pvalue_method_: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
+_LogFC_cuttoff_: log2 fold change threshold value
+_Adj_p_value_cuttoff_: adjusted p-value threshold
+_annotation_microarray_probesets_: logical value. If TRUE it will be performed annotation of the results with associated gene symbols
+_outputFileFolder_: a character string indicating the output directory pathway
 
 __Output data files__
 
@@ -117,14 +117,14 @@ __Description__:This function generates an enhanced heatmap representation with 
 
 __Input arguments__
 
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-vars2study: a character vector of column names of Pheno_data_table object to be studied
-varType : a character vector indicating the type of variables vars2study. Possible options: cat (categorical variable type), ord (ordinal variable type)
-dist_method : the distance measure to be used. This must be one of "euclidean", "maximum", "manhattan", "canberra", "binary" or "minkowski"  
-clust_method : the agglomeration method to be used. This should be (an unambiguous abbreviation of) one of "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC)
-main_title : a character string indicating an overall title for the plot
-outputFileFolder :  a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_vars2study_: a character vector of column names of Pheno_data_table object to be studied
+_varType_ : a character vector indicating the type of variables vars2study. Possible options: cat (categorical variable type), ord (ordinal variable type)
+_dist_method_ : the distance measure to be used. This must be one of "euclidean", "maximum", "manhattan", "canberra", "binary" or "minkowski"  
+_clust_method_: the agglomeration method to be used. This should be (an unambiguous abbreviation of) one of "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC)
+_main_title_: a character string indicating an overall title for the plot
+_outputFileFolder_:  a character string indicating the output directory pathway
 
 
 __Output data files__
@@ -142,15 +142,15 @@ __Description__:This function produces boxplot(s) of the given grouped values.
 
 __Input arguments__
 
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-var2study: a character string of phenotype dataset column name corresponding to a biological variable to be studied
-group_names: a character vector which contains the group names of biological variable to be studied
-genes_or_mirnas: a character vector which contains feature (mRNA,mature miRNA) names including in expression data frame to be studied
-addDot: logical value. If TRUE dots are added to boxplots
-x_label: a character string indicating x-axis title
-y_label: a character string indicating y-axis title
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_var2study_: a character string of phenotype dataset column name corresponding to a biological variable to be studied
+_group_names_: a character vector which contains the group names of biological variable to be studied
+_genes_or_mirnas_: a character vector which contains feature (mRNA,mature miRNA) names including in expression data frame to be studied
+_addDot_: logical value. If TRUE dots are added to boxplots
+_x_label_: a character string indicating x-axis title
+_y_label_: a character string indicating y-axis title
+_outputFileFolder_: a character string indicating the output directory pathway
 
 
 __Output data files__
@@ -168,10 +168,10 @@ __Description__:This function constructs miRNA- and RNA- seq raw read count data
 
 __Input arguments__
 
-RNA_seq_data: a data frame containing RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
-miRNA_seq_data: a data frame containing miRNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
-TCGA_source: logical value. If TRUE, function will be able to manage TCGA data
-outputFileFolder: a character string indicating the output directory pathway
+_RNA_seq_data_: a data frame containing RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
+_miRNA_seq_data_: a data frame containing miRNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
+_TCGA_source_: logical value. If TRUE, function will be able to manage TCGA data
+_outputFileFolder_: a character string indicating the output directory pathway
   
 __Output data files__
      
@@ -186,15 +186,15 @@ __Description__:This function filters lowly expressed features and applies TMM n
 
 __Input arguments__
 
-Exprs_table: a data frame containing miRNA- or RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-sample_type_colname: a character string of phenotype dataset column name corresponding to a biological variable
-diff_exp_type: a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
-data_type: a character string including the type of data. Possible options: mRNA, miRNA
-adjust_pvalue_method: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
-LogFC_cuttoff: log2 fold change threshold value
-Adj_p_value_cuttoff: adjusted p-value threshold
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing miRNA- or RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_sample_type_colname_: a character string of phenotype dataset column name corresponding to a biological variable
+_diff_exp_type_: a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
+_data_type_: a character string including the type of data. Possible options: mRNA, miRNA
+_adjust_pvalue_method_: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
+_LogFC_cuttoff_: log2 fold change threshold value
+_Adj_p_value_cuttoff_: adjusted p-value threshold
+_outputFileFolder_: a character string indicating the output directory pathway
 
 __Output data files__
 
@@ -209,11 +209,11 @@ __Description__:This function performs correlation (co-expression) network analy
 
 __Input arguments__
 
-NORM_EXPR_VALUES: a data frame containing normalized expression values for a series of samples, with rows corresponding to features (mRNA, mature miRNAs) and columns to samples
-feature_list: a character vector containing the features (mRNAs, mature miRNAs) to be studied.
-feature_type: type of data. Possible options: mRNA, miRNA
-cor_pval_cutoff: a correlation p-value threshold to define the most significant interactions
-outputFileFolder: a character string indicating the output directory pathway
+_NORM_EXPR_VALUES_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features (mRNA, mature miRNAs) and columns to samples
+_feature_list_: a character vector containing the features (mRNAs, mature miRNAs) to be studied.
+_feature_type_: type of data. Possible options: mRNA, miRNA
+_cor_pval_cutoff_: a correlation p-value threshold to define the most significant interactions
+_outputFileFolder_: a character string indicating the output directory pathway
 
 
 __Output data files__
@@ -227,9 +227,9 @@ __Description__:For user defined feature, this function performs a graphical dis
 
 __Input arguments__
      
-NORM_EXPR_VALUES: a data frame containing normalized expression values for a series of samples, with rows corresponding to features (mRNA, mature miRNAs) and columns to samples
-features_of_interest: a charaster vector containing the features (mRNAs, mature miRNAs) to be studied
-outputFileFolder: a character string indicating the output directory pathway
+_NORM_EXPR_VALUES_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features (mRNA, mature miRNAs) and columns to samples
+_features_of_interest_: a charaster vector containing the features (mRNAs, mature miRNAs) to be studied
+_outputFileFolder_: a character string indicating the output directory pathway
 
     
 __Output data files__
@@ -244,15 +244,15 @@ __Description__:This function performs miRNA-mRNA interaction network analysis c
 
 __Input arguments__
 
-NORM_EXPR_VALUES_MRNA: a data frame containing normalized expression values for a series of samples, with rows corresponding to mRNAs and columns to samples
-NORM_EXPR_VALUES_MIR: a data frame containing normalized expression values for a series of samples, with rows corresponding to mature miRNAs and columns to samples
-gene_list: a character vector containing mRNAs to be included in the network
-miRNA_list: a character vector containing miRNAs to be included in the network
-method: a character string indicating which correlation coefficient is to be used for the test. One of pearson, kendall, or spearman, can be abbreviated
-adjust_pvalue_method: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
-miRNA_annot: a character string indicating the data frame of annotation of mature miRNAs. The first column contains the mature miRNA accession numbers (MIMAT SYMBOLS) and the second one the mature miRNA symbols.
-cor_pvalue_cutoff: a correlation p-value threshold to define the most significant miRNA-mRNA interactions
-outputFileFolder: a character string indicating the output directory pathway
+_NORM_EXPR_VALUES_MRNA_: a data frame containing normalized expression values for a series of samples, with rows corresponding to mRNAs and columns to samples
+_NORM_EXPR_VALUES_MIR_: a data frame containing normalized expression values for a series of samples, with rows corresponding to mature miRNAs and columns to samples
+_gene_list_: a character vector containing mRNAs to be included in the network
+_miRNA_list_: a character vector containing miRNAs to be included in the network
+_method_: a character string indicating which correlation coefficient is to be used for the test. One of pearson, kendall, or spearman, can be abbreviated
+_adjust_pvalue_method_: character string specifying p-value adjustment method. Possible options: holm, hochberg, hommel, bonferroni, BH, BY, fdr, none.
+_miRNA_annot_: a character string indicating the data frame of annotation of mature miRNAs. The first column contains the mature miRNA accession numbers (MIMAT SYMBOLS) and the second one the mature miRNA symbols.
+_cor_pvalue_cutoff_: a correlation p-value threshold to define the most significant miRNA-mRNA interactions
+_outputFileFolder_: a character string indicating the output directory pathway
 
 
 __Output data files__
@@ -267,14 +267,14 @@ __Description__:This function draws a Cleveland dot plot
 
     
 __Input arguments__
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-var2study: a character string of phenotype dataset column name corresponding to a biological variable to be studied
-group_names: a character vector which contains the group names of biological variable to be studied
-genes_or_mirnas: a character vector which contains feature (mRNA,mature miRNA) names including in expression data frame to be studied
-x_label: a character string indicating x-axis title
-y_label: a character string indicating y-axis title
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_var2study_: a character string of phenotype dataset column name corresponding to a biological variable to be studied
+_group_names_: a character vector which contains the group names of biological variable to be studied
+_genes_or_mirnas_: a character vector which contains feature (mRNA,mature miRNA) names including in expression data frame to be studied
+_x_label_: a character string indicating x-axis title
+_y_label_: a character string indicating y-axis title
+_outputFileFolder_: a character string indicating the output directory pathway
 
 __Output data files__
 
@@ -290,15 +290,15 @@ __Description__:This function performs Principal component analysis (PCA)
       
 __Input arguments__
 
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-pheno_var2study: a character string of phenotype dataset column name corresponding to a biological variable to be studied
-PCs: a numeric vector containing the PCs to be ploted
-labels: logical value. If TRUE it labels the observations
-circle: logical value. If TRUE it draws a correlation circle
-ellipse: logical value. If TRUE it draws a normal data ellipse for each group
-var.axes: logical value. If TRUE it draws arrows for the variables (mRNAs, miRNAs).
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_pheno_var2study_: a character string of phenotype dataset column name corresponding to a biological variable to be studied
+_PCs_: a numeric vector containing the PCs to be ploted
+_labels_: logical value. If TRUE it labels the observations
+_circle_: logical value. If TRUE it draws a correlation circle
+_ellipse_: logical value. If TRUE it draws a normal data ellipse for each group
+_var.axes_: logical value. If TRUE it draws arrows for the variables (mRNAs, miRNAs).
+_outputFileFolder_: a character string indicating the output directory pathway
 
 __Output data files__
 
@@ -312,10 +312,10 @@ __Description__:According the expression level for each feature (mRNA, miRNA) of
 
 __Input arguments__
 
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-gene_mirnas: a character vector of features(miRNAs, mRNAs) to be used for splitting of observations
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_gene_mirnas_: a character vector of features(miRNAs, mRNAs) to be used for splitting of observations
+_outputFileFolder_: a character string indicating the output directory pathway
 
 __Output data files__
 
@@ -330,12 +330,12 @@ __Description__:This function filters lowly expressed features (mRNAs/miRNAs), a
 
 __Input arguments__
 
-Exprs_table: a data frame containing miRNA- or RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
-Pheno_data_table: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
-sample_type_colname: a character string of phenotype dataset column name corresponding to a biological variable
-diff_exp_type: a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
-data_type: a character string including the type of data. Possible options: mRNA, miRNA
-outputFileFolder: a character string indicating the output directory pathway
+_Exprs_table_: a data frame containing miRNA- or RNA-seq raw read counts for a series of samples, with rows corresponding to features and columns to samples
+_Pheno_data_table_: a data frame containing biological information of samples with rows corresponding to samples and columns to biological variables
+_sample_type_colname_: a character string of phenotype dataset column name corresponding to a biological variable
+_diff_exp_type_: a character string including group names of samples to be studied separated by "_vs_" (e.g. "GroupA_vs_GroupB")
+_data_type_: a character string including the type of data. Possible options: mRNA, miRNA
+_outputFileFolder_: a character string indicating the output directory pathway
 
 
 __Output data files__
@@ -345,18 +345,18 @@ Filter_normaliz_mRNA_miRNA_seq_data function generates two .txt files which cont
 
 
 
-16.  km_plot (Exprs_table, time_event_data, genes_or_mirnas,xlabel, ylabel, outputFileFolder )
+16. km_plot (Exprs_table, time_event_data, genes_or_mirnas,xlabel, ylabel, outputFileFolder )
 
 __Description__:This function performs a univariate Kaplan-Meier survival analysis. Specifically according to the expression level of each feature of interest it divides the samples into two groups (low, high) and it performs survival analysis between these groups.
 
 
 __Input arguments__
      
-Exprs_table: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
-time_event_data: a data frame of survival data with rows corresponding to samples and columns to time (column name= time) and event (column name= event) data respectively
-genes_or_mirnas: a character vector of features (mRNAs, miRNAs) to be studied
-xlabel: a character string indicating x-axis title
-ylabel: a character string indicating y-axis title
+_Exprs_table_: a data frame containing normalized expression values for a series of samples, with rows corresponding to features and columns to samples
+_time_event_data_: a data frame of survival data with rows corresponding to samples and columns to time (column name= time) and event (column name= event) data respectively
+_genes_or_mirnas_: a character vector of features (mRNAs, miRNAs) to be studied
+_xlabel_: a character string indicating x-axis title
+_ylabel_: a character string indicating y-axis title
 outputFileFolder: a character string indicating the output directory pathway
 
  
