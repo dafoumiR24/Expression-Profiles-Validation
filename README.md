@@ -54,7 +54,8 @@ _dir_download_GSES_: a character string indicating the pathway of directory of d
 __Output data files__
 
 This function generates a new directory "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/Quality_Control" containing .png files of boxplots and histograms of probe intensities before and after normalisation procedure (fRMA), pseudo-images of all microarray chips depicting the weights of probe level model fitting, NUSE and RLE boxplots along with their statistics in .txt files
-
+<br/>
+<br/>
  ```{r} 
 remove_lq_samples (GSE_acc, cels_REMOVE_AFTER_QC,dir_download_GSES )
   ```
@@ -71,7 +72,8 @@ __Output data files__
 
 This function generates a new directory "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/Quality_Control" which contains the .CEL files of high quality microchips with the corresponding phenotype data frame in txt file and the frma normalized expression set in .RData file.<br/>
 
-
+<br/>
+<br/>
 ```{r}
 GSEs_merge_gene_filter (GSE_acc_4_merge, targetAnnot, batchAnnot,  transform_method= "COMBAT", dir_download_GSES )
 ```
@@ -93,7 +95,8 @@ __Output data files__
 GSEs_merge_gene_filter function generates four .png files including MDSs and dendrograms for visual inspection of the merged datasets with and without applying any transformation method, four .txt files containing merged expression and merged pheno data frames with and without applying tranformation, and two . RData files containing merged expression set with and without transformation.<br/>
 
 
-
+<br/>
+<br/>
 ```{r}
 DEA_microarrays (Exprs_table, Pheno_data_table,sample_type_colname, diff_exp_type,adjust_pvalue_method, LogFC_cuttoff, Adj_p_value_cuttoff, annotation_microarray_probesets, outputFileFolder)
 ```
@@ -114,7 +117,8 @@ _outputFileFolder_: a character string indicating the output directory pathway<b
 __Output data files__
 
 DEA_microarrays function generates a .txt file containing the table of the top-ranked features from a linear model fit and a .png file including a volcano plot of log-fold changes versus log-odds of differential expression<br/>
-
+<br/>
+<br/>
 ```{r}    
 cluster_heatmap (Exprs_table, Pheno_data_table, vars2study, varType, dist_method,clust_method,main_title, outputFileFolder)
 ```
@@ -139,7 +143,8 @@ Cluster_heatmap function generates a .png file containing the clustering heatmap
 
 
 
-
+<br/>
+<br/>
 ```{r}  
 Boxplots (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,addDot=TRUE, x_label, y_label, outputFileFolder)
   ```
@@ -164,7 +169,8 @@ __Output data files__
 For each feature (mRNA/mature miRNA), Boxplots function generates .png file containing boxplot of the given biologically grouped expression values.<br/>
 
 
-
+<br/>
+<br/>
 
 ```{r}  
 prepr_common_miRNA_mRNA (RNA_seq_data, miRNA_seq_data,TCGA_source, outputFileFolder)
@@ -183,7 +189,8 @@ __Output data files__
      
 If TCGA_source=FALSE prepr_common_miRNA_mRNA generates two .txt files containing miRNA- and RNA- seq raw read count data frames with common samples respectively. By defining TCGA_source= TRUE it further creates two .txt files corresponding to phenotypic information of miRNA- and RNA- seq respectively.<br/>
    
-
+<br/>
+<br/>
 ```{r}  
 Prepr_DEA_mRNA_miRNA_seq (Exprs_table, Pheno_data_table, sample_type_colname, diff_exp_type,data_type, adjust_pvalue_method, LogFC_cuttoff, Adj_p_value_cuttoff, outputFileFolder)
 ```
@@ -207,7 +214,8 @@ __Output data files__<br/>
 
 Prepr_DEA_mRNA_miRNA_seq function generates a .txt file containing the table of the top-ranked features (mature miRNAs/mRNAs) from a linear model fit and a .png file including a volcano plot of log-fold changes versus log-odds of differential expression<br/>
 
-
+<br/>
+<br/>
 ```{r}  
 Feature_cor_net (NORM_EXPR_VALUES, feature_list,feature_type,cor_pval_cutoff, outputFileFolder)
 ```
@@ -227,7 +235,8 @@ _outputFileFolder_: a character string indicating the output directory pathway<b
 __Output data files__<br/>
 
 Feature_cor_net function generates three .txt files. The first file contains a data frame with the correlated feature targets for each feature. The second file contains a data frame organizing the most statistically significant interactions in pairs with their corresponding statistics and the third one a data frame including the node attributes. The last two files can be opened in Cytoscape in order to visualize the correlation network.<br/>
-
+<br/>
+<br/>
 ```{r}    
 cor_heatmap (NORM_EXPR_VALUES, features_of_interest, outputFileFolder)
 ```
@@ -245,7 +254,8 @@ __Output data files__
 
 For each feature of interest cor_heatmap function generates two .png files including the heatmap displays of negative and positive correlations of this feature with all others, as well as two .txt files which contain the data frames organizing the results in pairs with their corresponding statistics.<br/>
  
-
+<br/>
+<br/>
 ```{r}  
 miRNA_mRNA_inters (NORM_EXPR_VALUES_MRNA,NORM_EXPR_VALUES_MIRNA,gene_list, miRNA_list,method= "pearson",adjust_pvalue_method= NULL, miRNA_annot, cor_pvalue_cutoff,outputFileFolder)
 ```
@@ -269,7 +279,8 @@ __Output data files__
 
 miRNA_mRNA_inters function generates four .txt files. The first file contains a data frame showing the targets for each miRNA. The second file contains a dataframe including the number of miRNAs that are targeting a specific mRNA. The third file contains a data frame organizing the most statistically significant miRNA-mRNA interactions in pairs with their corresponding statistics and the last one a data frame including the node attributes. The last two files can be opened in Cytoscape in order to visualize the miRNA-mRNA correlation network.<br/>
 
-
+<br/>
+<br/>
 ```{r}  
 Dotchart (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,  x_label, y_label, outputFileFolder)
 ```
@@ -293,7 +304,8 @@ __Output data files__
 For each feature (mRNA/mature miRNA), Dotchart function generates .png file containing a Cleveland dot plot of the given biologically grouped expression values.<br/>
 
 
-
+<br/>
+<br/>
 ```{r}  
 PCA (Exprs_table, Pheno_data_table, pheno_var2study,PCs, labels, circle, ellipse, var.axes, outputFileFolder)
 ```
@@ -317,7 +329,8 @@ __Output data files__
 
 PCA function generates two .png files containing a plot of the variances (y-axis) associated with the PCs (x-axis) and a biplot of principal components<br/>
 
-
+<br/>
+<br/>
 ```{r}  
 obs_strat_by_expr (Exprs_table, Pheno_data_table, gene_mirnas, outputFileFolder)
 ```
@@ -336,7 +349,8 @@ __Output data files__
 obs_strat_by_expr function generates a .txt file containing a data frame with rows corresponding to samples and, for each feature of interest, a column including the expression groups of samples. <br/>
 
 
-
+<br/>
+<br/>
 ```{r}  
 Filter_normaliz_mRNA_miRNA_seq_data (Exprs_table, Pheno_data_table, sample_type_colname, diff_exp_type,data_type, outputFileFolder)
 ```
@@ -358,7 +372,8 @@ __Output data files__
 Filter_normaliz_mRNA_miRNA_seq_data function generates two .txt files which contain two data frames including log-CPM expression counts and biological phenotype data respectively.<br/>
   
 
-
+<br/>
+<br/>
 ```{r}  
 km_plot (Exprs_table, time_event_data, genes_or_mirnas,xlabel, ylabel, outputFileFolder )
 ```
