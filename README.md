@@ -13,7 +13,7 @@
 1. Start R and install R/BioConductor dependencies  
 
 download the BioC installation routines 
-'''source("http://bioconductor.org/biocLite.R")'''
+               source("http://bioconductor.org/biocLite.R")
 install the core packages. It will take some time!!
      biocLite(c())
 install the Bioconductor packages
@@ -25,8 +25,9 @@ library(devtools)
 install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 
 2. Download files from 'scripts' directory to a preference directory. To set this directory as your working directory of R, type:
-   WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
-   setwd(WD)
+   
+WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
+setwd(WD)
 
 3. a. For GPL570 platform -Affymetrix Human Genome U133 Plus 2.0 microarray transcriptomic data- analyses you need to acquire the raw data directly
 from GEO. Specifically for each GSE accession number (GSEXXXX) you need to download the .CEL files and put them into a new directory named "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data". Also you need to capture the experimental information. This is just a text file which includes a data frame containing three columns. The first column (without colname) describes the chip names, and the last ones correspond the source of the biological samples hybridised to them and the GSE accession number of each chip respectively (with column names). You need to put this file into the "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/data" directory.
@@ -38,7 +39,7 @@ from GEO. Specifically for each GSE accession number (GSEXXXX) you need to downl
 
 #C. USAGE
 ........................................................................................................................................  
-1. qc_microarray_data (GSE_acc, dir_download_GSES )
+      1.                    qc_microarray_data (GSE_acc, dir_download_GSES )
  
 __Description__: This function performs some quality control checks in order to make sure that there are no issues with a specific GSE dataset. 
 
