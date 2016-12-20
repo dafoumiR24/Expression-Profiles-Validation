@@ -13,7 +13,7 @@
 1. Start R and install R/BioConductor dependencies  
 
 download the BioC installation routines 
-    source("http://bioconductor.org/biocLite.R")
+'''source("http://bioconductor.org/biocLite.R")'''
 install the core packages. It will take some time!!
      biocLite(c())
 install the Bioconductor packages
