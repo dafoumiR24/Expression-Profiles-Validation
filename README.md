@@ -55,7 +55,7 @@ unzip("MODIFIED_microCosm_v5_18.zip")
 #C. USAGE
 
  ```{r} 
-qc_microarray_data (GSE_acc, dir_download_GSES )
+qc_microarray_data (GSE_acc, dir_download_GSES)
  ```
 __Description__
 
@@ -72,7 +72,7 @@ This function generates a new directory "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/Qu
 <br/>
 <br/>
  ```{r} 
-remove_lq_samples (GSE_acc, cels_REMOVE_AFTER_QC,dir_download_GSES )
+remove_lq_samples (GSE_acc, cels_REMOVE_AFTER_QC, dir_download_GSES)
   ```
 __Description__
 
@@ -92,7 +92,7 @@ This function generates a new directory "C:/Users/aaaa/bbbb/cccc/dddd/GSEXXXX/Qu
 <br/>
 <br/>
 ```{r}
-GSEs_merge_gene_filter (GSE_acc_4_merge, targetAnnot, batchAnnot,  transform_method, dir_download_GSES )
+GSEs_merge_gene_filter (GSE_acc_4_merge, targetAnnot, batchAnnot, transform_method, dir_download_GSES)
 ```
 
 __Description__
@@ -117,7 +117,7 @@ GSEs_merge_gene_filter function generates four .png files including MDSs and den
 <br/>
 <br/>
 ```{r}
-DEA_microarrays (Exprs_table, Pheno_data_table,sample_type_colname, diff_exp_type,adjust_pvalue_method, LogFC_cuttoff, Adj_p_value_cuttoff, annotation_microarray_probesets, outputFileFolder)
+DEA_microarrays (Exprs_table, Pheno_data_table, sample_type_colname, diff_exp_type, adjust_pvalue_method, LogFC_cuttoff, Adj_p_value_cuttoff, annotation_microarray_probesets, outputFileFolder)
 ```
 __Description__
 
@@ -141,7 +141,7 @@ DEA_microarrays function generates a .txt file containing the table of the top-r
 <br/>
 <br/>
 ```{r}    
-cluster_heatmap (Exprs_table, Pheno_data_table, vars2study, varType, dist_method,clust_method,main_title, outputFileFolder)
+cluster_heatmap (Exprs_table, Pheno_data_table, vars2study, varType, dist_method, clust_method, main_title, outputFileFolder)
 ```
 
 __Description__
@@ -169,7 +169,7 @@ Cluster_heatmap function generates a .png file containing the clustering heatmap
 <br/>
 <br/>
 ```{r}  
-Boxplots (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,addDot, x_label, y_label, outputFileFolder)
+Boxplots (Exprs_table, Pheno_data_table, var2study, group_names, genes_or_mirnas, addDot, x_label, y_label, outputFileFolder)
   ```
 __Description__
 
@@ -198,7 +198,7 @@ For each feature (mRNA/mature miRNA), Boxplots function generates .png file cont
 <br/>
 
 ```{r}  
-prepr_common_miRNA_mRNA (RNA_seq_data, miRNA_seq_data,TCGA_source, outputFileFolder)
+prepr_common_miRNA_mRNA (RNA_seq_data, miRNA_seq_data, TCGA_source, outputFileFolder)
 ```
    
 __Description__
@@ -246,7 +246,7 @@ Prepr_DEA_mRNA_miRNA_seq function generates a .txt file containing the table of 
 <br/>
 <br/>
 ```{r}  
-Feature_cor_net (NORM_EXPR_VALUES, feature_list,feature_type,cor_pval_cutoff, outputFileFolder)
+Feature_cor_net (NORM_EXPR_VALUES, feature_list, feature_type, cor_pval_cutoff, outputFileFolder)
 ```
   
 __Description__
@@ -290,7 +290,7 @@ For each feature of interest cor_heatmap function generates two .png files inclu
 <br/>
 <br/>
 ```{r}  
-miRNA_mRNA_inters (NORM_EXPR_VALUES_MRNA,NORM_EXPR_VALUES_MIRNA,gene_list, miRNA_list,method,adjust_pvalue_method, miRNA_annot, cor_pvalue_cutoff,outputFileFolder)
+miRNA_mRNA_inters (NORM_EXPR_VALUES_MRNA, NORM_EXPR_VALUES_MIRNA, gene_list, miRNA_list, method, adjust_pvalue_method, miRNA_annot,  cor_pvalue_cutoff, outputFileFolder)
 ```
 
 __Description__
@@ -317,7 +317,7 @@ miRNA_mRNA_inters function generates four .txt files. The first file contains a 
 <br/>
 <br/>
 ```{r}  
-Dotchart (Exprs_table, Pheno_data_table, var2study,group_names, genes_or_mirnas,  x_label, y_label, outputFileFolder)
+Dotchart (Exprs_table, Pheno_data_table, var2study, group_names, genes_or_mirnas, x_label, y_label, outputFileFolder)
 ```
 
 __Description__
@@ -344,7 +344,7 @@ For each feature (mRNA/mature miRNA), Dotchart function generates .png file cont
 <br/>
 <br/>
 ```{r}  
-PCA (Exprs_table, Pheno_data_table, pheno_var2study,PCs, labels, circle, ellipse, var.axes, outputFileFolder)
+PCA (Exprs_table, Pheno_data_table, pheno_var2study, PCs, labels, circle, ellipse, var.axes, outputFileFolder)
 ```
 
 __Description__
@@ -393,7 +393,7 @@ obs_strat_by_expr function generates a .txt file containing a data frame with ro
 <br/>
 <br/>
 ```{r}  
-Filter_normaliz_mRNA_miRNA_seq_data (Exprs_table, Pheno_data_table, sample_type_colname, diff_exp_type,data_type, outputFileFolder)
+Filter_normaliz_mRNA_miRNA_seq_data (Exprs_table, Pheno_data_table, sample_type_colname, diff_exp_type, data_type, outputFileFolder)
 ```
   
 __Description__
@@ -418,7 +418,7 @@ Filter_normaliz_mRNA_miRNA_seq_data function generates two .txt files which cont
 <br/>
 <br/>
 ```{r}  
-km_plot (Exprs_table, time_event_data, genes_or_mirnas,xlabel, ylabel, outputFileFolder )
+km_plot (Exprs_table, time_event_data, genes_or_mirnas, xlabel, ylabel, outputFileFolder)
 ```
 
 __Description__
