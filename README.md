@@ -440,9 +440,10 @@ __Output data files__
 
 For each feature (mRNA, miRNA) km_plot function generates a .png file containing Kaplan-Meier survival curves for high and low expression sample groups.<br/>
 
-
+<br/>
+<br/>
 
 
 Copyright (c) 2016 AUTH<br/>
-Author: Pamagiotis Mokos<br/>
+Author: Panagiotis Mokos<br/>
 
