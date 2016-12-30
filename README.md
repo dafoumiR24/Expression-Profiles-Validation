@@ -32,14 +32,14 @@ install_github(c("kassambara/easyGgplot2", "vqv/ggbiplot"))
 WD <- "C:/Users/aaaa/bbbb/cccc/dddd"
 setwd(WD)
 ```
-To load the R functions (scripts) type:<br/>
+To load the R functions (scripts), type:<br/>
 ```{r}
 functions_list <- list.files(pattern = "script")
 for(i in 1:length(functions_list)){
     source(functions_list[i])
   }
   ```
-To extract files from zip archives type:<br/>
+To extract files from zip archives, type:<br/>
 ```{r}
 unzip("MODIFIED_targetScan_v6.2_18.txt.zip")
 unzip("MODIFIED_microCosm_v5_18.zip")
